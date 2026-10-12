@@ -16,16 +16,16 @@ const DAY_MS = 24 * 60 * 60 * 1000; // 24 hours in milliseconds - 86400000 milis
 export const rules: StockRule[] = [
     {
         type: 'NEGATIVE_STOCK',
-        evaluate: (p) => {
+        evaluate: (p) => 
             p.quantityLimit < 0
                 ? {
                       severity: 'critical',
-                      message: `Product stock is negative ${p.name} possibly oversell or 
+                      message: `Product stock is negative (${p.quantityLimit}). possibly oversell or 
                       sync bug.`,
                       details: { quantityLimit: p.quantityLimit },
                   }
-                : null;
-        }
+                  : null,
+        
     },
     {
         type: 'RESERVED_EXCEEDS_AVAILABLE',
@@ -63,9 +63,9 @@ export const rules: StockRule[] = [
                 quantityLimit: p.quantityLimit,
                 reorderPoint: p.reorderPoint,
             },
-        }
-        : null,
-        },
+            }
+            : null,
+    },
         {
             type: 'STALE_STOCK_DATA',
             evaluate: (p, now) => {
@@ -78,10 +78,11 @@ export const rules: StockRule[] = [
                     severity: 'low',
                     message: `No stock recorded in ${days} days - stock count may be stable`,
                     details: { daysSinceRestock: days},
-                } : null;
+                }
+                : null;
                 
                 
                 
         },
     },
-];//fix errors later
+];

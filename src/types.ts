@@ -2,9 +2,9 @@ export type Severity = 'critical' | 'high' | 'medium' | 'low';
 
 export type StockIssueType =
     | 'NEGATIVE_STOCK'
-    | 'RESERVED_STOCK_AVAILABLE'
+    | 'RESERVED_EXCEEDS_AVAILABLE'
     | 'OUT_OF_STOCK_ACTIVE'
-    | 'BELOW_REODER_POINT'
+    | 'BELOW_REORDER_POINT'
     | 'STALE_STOCK_DATA';
 
 export interface Product {
