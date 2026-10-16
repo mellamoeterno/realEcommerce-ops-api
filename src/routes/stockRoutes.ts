@@ -1,8 +1,8 @@
 import { Router } from 'express'
-import { StockInvestiagtionService } from '../services/stockInvestigationService'
+import { StockInvestigationService } from '../services/stockInvestigationService'
 import { Severity } from '../types'
 
-export function stockRoutes(Service: StockInveestigationService){
+export function stockRoutes(service: StockInvestigationService){
     const router = Router()
 
     router.get('/issues', async (req, res) => {
@@ -18,9 +18,9 @@ export function stockRoutes(Service: StockInveestigationService){
             }, {});
 
             res.json({ total: issues.length, counts, issues})
-        } catch(err) {
+            } catch(err) {
             console.log(err)
             res.status(500).json({ error: 'failed to investigate stock'})
-        })
-    }//current in work
-}
+            }
+            });
+    }
