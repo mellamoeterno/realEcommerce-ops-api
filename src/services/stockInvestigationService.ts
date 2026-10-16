@@ -1,6 +1,6 @@
 import { randomUUID } from 'crypto';
 import { ProductRepository } from '../repositories/productRepository';
-import { rules } from '../rules/stockRules';
+import { stockRoutes } from '../routes/stockRoutes';
 import { Product, SEVERITY_RANK, StockIssue } from '../types';
 
 export class StockInvestigationService {
@@ -11,4 +11,4 @@ export class StockInvestigationService {
     return this.investigate(products, new Date());
   }
 
-}
+}//....fix&continueHere

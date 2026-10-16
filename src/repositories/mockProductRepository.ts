@@ -22,3 +22,5 @@ export class MockProductRepository implements ProductRepository {
     return SEED.find((p) => p.id === id) ?? null;
   }
 }
+
+//p7 (inactive, zero stock) should produce no issues, and p8 should produce two. This to know how the rules are wired correctly.
