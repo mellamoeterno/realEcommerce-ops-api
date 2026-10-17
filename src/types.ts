@@ -1,13 +1,14 @@
 export type Severity = 'critical' | 'high' | 'medium' | 'low';
+                            //Severity imported at stock rules
 
-export type StockIssueType =
+export type StockIssueType = //StockIssueType imported at stock rules
     | 'NEGATIVE_STOCK'
     | 'RESERVED_EXCEEDS_AVAILABLE'
     | 'OUT_OF_STOCK_ACTIVE'
     | 'BELOW_REORDER_POINT'
     | 'STALE_STOCK_DATA';
 
-export interface Product {
+export interface Product {//Product imported at stock rules
     id: string;
     sku:string;
     name: string;
@@ -18,7 +19,7 @@ export interface Product {
     lastRestockedAt: string | null;
 }
 
-export interface StockIssue {
+export interface StockIssue { 
     id: string;
     productId: string;
     sku:string;

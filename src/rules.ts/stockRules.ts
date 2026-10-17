@@ -1,4 +1,4 @@
-import { Severity, StockIssueType, Product  }from '../types';
+import { Severity, StockIssueType, Product  } from '../types';
 
 export type RuleResult = {
     severity: Severity;
