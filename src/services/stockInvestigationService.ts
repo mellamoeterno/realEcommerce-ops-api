@@ -25,8 +25,8 @@ export class StockInvestigationService {
           sku: product.sku,
           productName: product.name,
           type: rule.type,
-          severity: rule.severity,
-          message: rule.message,
+          severity: result.severity,
+          message: result.message,
           details: result.details,
           detectedAt: now.toISOString(),
         });
