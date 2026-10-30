@@ -23,4 +23,6 @@ export function stockRoutes(service: StockInvestigationService){
             res.status(500).json({ error: 'failed to investigate stock'})
             }
             });
+            
+            return router
     }
